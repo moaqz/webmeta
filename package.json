@@ -1,0 +1,25 @@
+{
+  "name": "webmeta",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "packageManager": "pnpm@9.6.0",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev --port 8080",
+    "start": "wrangler dev",
+    "test": "vitest",
+    "typegen": "wrangler types src/types/worker-configuration.d.ts",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^2.24.1",
+    "@cloudflare/vitest-pool-workers": "^0.4.5",
+    "@cloudflare/workers-types": "^4.20240729.0",
+    "eslint": "9.5.0",
+    "typescript": "^5.5.2",
+    "vitest": "1.5.0",
+    "wrangler": "^3.60.3"
+  }
+}
