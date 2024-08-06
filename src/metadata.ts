@@ -17,12 +17,9 @@ type Selector =
 const METADATA_SELECTORS: Record<keyof Metadata, Selector[]> = {
   title: [
     { selector: "head title", type: "text" },
-    { selector: "head meta[name='og:title']", type: "attr", attr: "content" },
-    { selector: "head meta[name='title']", type: "attr", attr: "content" },
   ],
   description: [
     { selector: "head meta[name='description']", type: "attr", attr: "content" },
-    { selector: "head meta[property='og:description']", type: "attr", attr: "content" },
   ],
   favicon: [
     { selector: "head link[rel='icon']", type: "attr", attr: "href" },
