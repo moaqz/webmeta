@@ -13,6 +13,10 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
+  "dependencies": {
+    "cheerio": "1.0.0-rc.12",
+    "valibot": "^0.37.0"
+  },
   "devDependencies": {
     "@antfu/eslint-config": "^2.24.1",
     "@cloudflare/vitest-pool-workers": "^0.4.5",
