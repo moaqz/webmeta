@@ -1,3 +1,9 @@
+const corsHeaders = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Headers": "*",
+  "Access-Control-Allow-Methods": "GET,HEAD,OPTIONS",
+};
+
 export function responseJSON(
   data: Record<string, unknown>,
   status = 200,
@@ -9,6 +15,7 @@ export function responseJSON(
     status,
     headers: {
       ...headers,
+      ...corsHeaders,
       "Content-Type": "application/json",
     },
   });
