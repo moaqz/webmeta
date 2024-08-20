@@ -107,11 +107,11 @@ export function normalizeURLs(metadata: Metadata, baseUrl: string): Metadata {
   const _baseURL = new URL(baseUrl);
 
   const normalizeURL = (url: string) => {
-    if (url && url.startsWith("/")) {
-      return `${_baseURL.origin}${url}`;
+    if (!url) {
+      return url;
     }
 
-    return url;
+    return new URL(url, _baseURL.origin).toString();
   };
 
   return {
