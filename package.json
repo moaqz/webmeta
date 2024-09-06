@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.0",
   "private": true,
-  "packageManager": "pnpm@9.6.0",
+  "packageManager": "pnpm@9.9.0",
   "scripts": {
     "deploy": "wrangler deploy",
     "dev": "wrangler dev --port 8080",
@@ -18,12 +18,12 @@
     "valibot": "^0.37.0"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.24.1",
-    "@cloudflare/vitest-pool-workers": "^0.4.5",
-    "@cloudflare/workers-types": "^4.20240729.0",
+    "@antfu/eslint-config": "^2.27.3",
+    "@cloudflare/vitest-pool-workers": "^0.4.29",
+    "@cloudflare/workers-types": "^4.20240903.0",
     "eslint": "9.5.0",
-    "typescript": "^5.5.2",
+    "typescript": "^5.5.4",
     "vitest": "1.5.0",
-    "wrangler": "^3.60.3"
+    "wrangler": "^3.75.0"
   }
 }
