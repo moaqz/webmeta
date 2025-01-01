@@ -94,8 +94,7 @@ export function filterMetadata(metadata: Metadata, fields: string[] | null): Par
     }
 
     if (field in metadata) {
-      // eslint-disable-next-line ts/ban-ts-comment
-      // @ts-expect-error
+      // @ts-ignore
       _data[field] = metadata[field];
     }
   }
