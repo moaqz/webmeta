@@ -1,0 +1,11 @@
+# https://github.com/evilmartians/lefthook/blob/master/docs/configuration.md
+[pre-commit]
+parallel = true
+
+[pre-commit.commands.lint]
+run = "pnpm eslint --fix {staged_files}"
+glob = "*.{js,ts,tsx,jsx,json}"
+stage_fixed = true
+
+[pre-commit.commands.tests]
+run = "pnpm test"
