@@ -1,0 +1,9 @@
+{
+  "description": "A simple HTML page",
+  "favicon": "http://localhost:9000/favicon.ico",
+  "og_description": "OG Basic Description",
+  "og_image": "https://example.com/image.png",
+  "og_title": "OG Basic Title",
+  "og_type": "website",
+  "title": "Basic Page",
+}

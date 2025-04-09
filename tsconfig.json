@@ -14,18 +14,12 @@
     },
     "types": [
       "@cloudflare/workers-types",
+      "@cloudflare/vitest-pool-workers"
     ],
     "strict": true,
     "noUncheckedIndexedAccess": true,
     "noEmit": true,
     "isolatedModules": true,
     "skipLibCheck": true
-  },
-  "include": [
-    "worker-configuration.d.ts",
-    "src/**/*.ts"
-  ],
-  "exclude": [
-    "test"
-  ]
+  }
 }
