@@ -1,8 +1,13 @@
 import { flatten, safeParseAsync } from "valibot";
 import { searchParamsSchema } from "./schemas";
-import { responseJSON, parseCacheTTL } from "./utils";
-import type { Metadata } from "./metadata";
-import { extractMetadata, filterMetadata, normalizeURLs } from "./metadata";
+import { responseJSON } from "./utils/response";
+import {
+  extractMetadata,
+  filterMetadata,
+  normalizeURLs,
+  type Metadata
+} from "./utils/metadata";
+import { parseCacheTTL } from "./utils/parse-cache-ttl";
 
 export default {
   async fetch(request: Request, env: Env, _ctx: unknown): Promise<Response> {

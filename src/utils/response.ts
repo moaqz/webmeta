@@ -1,4 +1,4 @@
-const corsHeaders = {
+const CORS_HEADERS = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers": "*",
   "Access-Control-Allow-Methods": "GET,HEAD,OPTIONS",
@@ -15,21 +15,8 @@ export function responseJSON(
     status,
     headers: {
       ...headers,
-      ...corsHeaders,
+      ...CORS_HEADERS,
       "Content-Type": "application/json",
     },
   });
-}
-
-export function parseCacheTTL(value: string | undefined, defaultValue: number) {
-  if (!value) {
-    return defaultValue;
-  }
-
-  const ttl = Number.parseInt(value);
-  if (Number.isNaN(ttl)) {
-    return 3 * 60 * 60;
-  }
-
-  return ttl;
 }
