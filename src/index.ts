@@ -1,14 +1,13 @@
 import { flatten, safeParseAsync } from "valibot";
 import { searchParamsSchema } from "./schemas";
-import { responseJSON } from "./utils";
+import { responseJSON, parseCacheTTL } from "./utils";
 import type { Metadata } from "./metadata";
 import { extractMetadata, filterMetadata, normalizeURLs } from "./metadata";
-
-const EXPIRATION_TTL = 24 * 60 * 60;
 
 export default {
   async fetch(request: Request, env: Env, _ctx: unknown): Promise<Response> {
     const params = new URL(request.url).searchParams;
+    const metadataTTL = parseCacheTTL(env._METADATA_RETENTION_CACHE, 3 * 60 * 60);
 
     const { success, issues, output } = await safeParseAsync(searchParamsSchema, {
       from: params.get("from"),
@@ -65,12 +64,12 @@ export default {
     metadata = normalizeURLs(metadata, from);
 
     /**
-     * Cache the normalized metadata for the specified URL for 24 hours.
+     * Cache the normalized metadata for the specified URL.
      */
     await env.KV.put(
       from,
       JSON.stringify(metadata),
-      { expirationTtl: EXPIRATION_TTL },
+      { expirationTtl: metadataTTL }
     );
 
     return responseJSON({
