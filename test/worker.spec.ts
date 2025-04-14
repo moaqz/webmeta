@@ -64,6 +64,6 @@ describe("API v1", () => {
       expect(body).toBeTypeOf("object");
       expect(body).toHaveProperty("data");
       await expect(body.data).toMatchFileSnapshot(`./fixtures/${output}`);
-    },
+    }
   );
 });

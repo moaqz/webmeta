@@ -17,7 +17,7 @@ export async function setup({ provide }: TestProject) {
       "/ok",
       eventHandler(() => {
         return { status: "ok" };
-      }),
+      })
     )
     .use(
       eventHandler((event) => {
@@ -43,7 +43,7 @@ export async function setup({ provide }: TestProject) {
             };
           },
         });
-      }),
+      })
     );
 
   const nodeHandler = toNodeListener(app);

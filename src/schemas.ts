@@ -4,8 +4,8 @@ export const metadataFieldsSchema = nullable(
   pipe(
     string(),
     transform(input => input.split(",")),
-    array(string()),
-  ),
+    array(string())
+  )
 );
 
 export const searchParamsSchema = object({
@@ -18,7 +18,7 @@ export const searchParamsSchema = object({
       }
 
       return input;
-    }),
+    })
   ),
   fields: metadataFieldsSchema,
 });

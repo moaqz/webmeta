@@ -7,7 +7,7 @@ const corsHeaders = {
 export function responseJSON(
   data: Record<string, unknown>,
   status = 200,
-  headers?: HeadersInit,
+  headers?: HeadersInit
 ): Response {
   const _body = JSON.stringify(data);
 
